@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ErickRualesComplementario.Views.vQrViewer"
+             Title="vQrViewer">
+    <VerticalStackLayout
+            Spacing="25"
+            Padding="10,0"
+            VerticalOptions="Center">
+        <Button
+                x:Name="ImageSelect"
+                Text="Añadir Codigo QR"
+                SemanticProperties.Hint="Select Image"
+            Clicked="ImageSelect_Clicked"
+                HorizontalOptions="Center"
+                BackgroundColor="#00C4FF"/>
+        <Image
+                x:Name="barcodeImage"
+                SemanticProperties.Description="Selected Barcode"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+        <Grid Padding="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Editor x:Name="outputText"
+                 Placeholder="Calorias Totales"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    />
+        </Grid>
+
+        <Button
+                x:Name="copyText"
+                Text="Copy"
+                SemanticProperties.Hint="Copy Text"
+                WidthRequest="150"
+            Clicked="copyText_Clicked"
+                HorizontalOptions="Center"
+                BackgroundColor="#00C4FF"/>
+
+    </VerticalStackLayout>
+</ContentPage>

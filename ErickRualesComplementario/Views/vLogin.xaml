@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ErickRualesComplementario.Views.Login"
+             Title="Login">
+    <VerticalStackLayout
+            BackgroundColor="White">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label
+                    Text="Sistema Estudiantes"
+                    FontSize="30"
+                    TextColor="#00C4FF"
+                    Padding="20"
+                    HorizontalOptions="Center"
+                FontAttributes="Bold"
+                />
+        </Grid>
+
+
+        <Label
+                Text="INICIAR SESION"
+                FontSize="25"
+                VerticalOptions="Center"
+                HorizontalOptions="CenterAndExpand"
+                TextColor="#00C4FF"
+                FontAttributes="Bold"
+                />
+
+        <Grid Padding="25" RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                
+            </Grid.RowDefinitions>
+            <Frame CornerRadius="10" Padding="0" BackgroundColor="White" HasShadow="True" Grid.Row="0">
+                <Entry
+                    x:Name="txtUsuario"
+                    Placeholder="Ingrese su usuario"
+                    BackgroundColor="Transparent"
+                    PlaceholderColor="Black"
+                 />
+            </Frame>
+            <Frame CornerRadius="10" Padding="0" BackgroundColor="White" HasShadow="True" Grid.Row="1">
+                <Entry
+                     x:Name="txtContra"
+                    Placeholder="Ingrese su contraseña"
+                    IsPassword="True"
+                    BackgroundColor="Transparent"
+                    PlaceholderColor="Black"
+                       
+                />
+            </Frame>
+        </Grid>
+        <Grid Padding="25,10">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button
+                x:Name="btnIniciarSesion"
+                Text="Entrar"
+                BackgroundColor="#0078FF"
+                Clicked="btnIniciarSesion_Clicked"
+            />
+        </Grid>
+
+
+        <Grid Padding="25,0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button
+    x:Name="btnIngresarQR"
+    Text="Ingresar QR"
+    BackgroundColor="#0078FF"
+                Clicked="btnIngresarQR_Clicked"
+/>
+
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ErickRualesComplementario.Views.vPrincipal"
+             Title="vPrincipal">
+    <VerticalStackLayout>
+        <Label 
+            Text="Listado de Estudiantes"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontSize="20"/>
+
+        <Grid Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Entry
+        x:Name="txtCod_estudiante"
+        Placeholder="Ingrese su nombre"
+                IsVisible="false"
+        
+/>
+            <Entry
+                x:Name="txtNombre"
+                Placeholder="Ingrese su nombre"
+                Grid.Row="0"
+        />
+
+            <Entry
+                x:Name="txtApellido"
+                Placeholder="Ingrese su apellido"
+                Grid.Row="1"
+/>
+            <Entry
+                x:Name="txtCurso"
+                Placeholder="Ingrese su curso"
+                Grid.Row="2"
+/>
+            <Entry
+                x:Name="txtParalelo"
+                Placeholder="Ingrese su paralelo"
+                Grid.Row="3"
+/>
+            <Entry
+                x:Name="txtNotafinal"
+                Placeholder="Ingrese su nota"
+                Grid.Row="4"
+/>
+        </Grid>
+
+        <Grid Padding="5" RowSpacing="1" ColumnSpacing="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button
+                x:Name="btnInsertar"
+                Text="Añadir"
+                Clicked="btnInsertar_Clicked"
+                Grid.Row="0"
+                Grid.Column="0"/>
+            <Label
+                x:Name="status"
+                Grid.Row="1"
+                Grid.Column="0"
+                TextColor="Red"
+                />
+
+            <Grid  Grid.Row="3" Padding="5" ColumnSpacing="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button
+                    x:Name="btnEliminar"
+                    Text="Eliminar"
+                    Clicked="btnEliminar_Clicked"
+                    Grid.Column="0"
+                   />
+                <Button
+                    x:Name="btnActualizar"
+                    Text="Actualizar"
+                    Clicked="btnActualizar_Clicked"
+                    Grid.Column="1"
+   />
+            </Grid>
+            
+            
+            <Button
+                x:Name="btnListar"
+                Text="Listar / Limpiar"
+                Clicked="btnListar_Clicked"
+                Grid.Row="2"
+                Grid.Column="0"/>
+
+            <Grid ColumnSpacing="10" Padding="10" Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="NOMBRE" Grid.Column="0" FontSize="13"/>
+                <Label Text="APELLIDO" Grid.Column="1" FontSize="13"/>
+                <Label Text="CURSO" Grid.Column="2" FontSize="13"/>
+                <Label Text="PARALELO" Grid.Column="3" FontSize="13"/>
+                <Label Text="NOTA" Grid.Column="4" FontSize="13"/>
+
+
+            </Grid>
+
+            <ListView x:Name="ListaEstudiantes" ItemSelected="listaEstudiantes_ItemSelected" Grid.Row="5">
+                <ListView.ItemTemplate>
+
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Grid ColumnSpacing="0" Padding="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding nombre}" Grid.Column="0" Style="{StaticResource ListItemTextStyle}"/>
+                                    <Label Text="{Binding apellido}" Grid.Column="1" Style="{StaticResource ListItemTextStyle}"/>
+                                    <Label Text="{Binding curso}" Grid.Column="2" Style="{StaticResource ListItemTextStyle}"/>
+                                    <Label Text="{Binding paralelo}" Grid.Column="3" Style="{StaticResource ListItemTextStyle}"/>
+                                    <Label Text="{Binding nota_final}" Grid.Column="4" Style="{StaticResource ListItemTextStyle}"/>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+        </Grid>
+
+    </VerticalStackLayout>
+</ContentPage>
